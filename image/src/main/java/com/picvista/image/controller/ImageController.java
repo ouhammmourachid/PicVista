@@ -40,4 +40,9 @@ public class ImageController {
         String response = imageService.deleteImage(id);
         return ResponseEntity.ok(response);
     }
+    @GetMapping
+    public ResponseEntity<?> getAllImages(){
+        Iterable<Image> images = imageService.getAllImages();
+        return ResponseEntity.ok(images);
+    }
 }
