@@ -18,7 +18,7 @@ public class LikeController {
     @Autowired
     LikeService likeService;
 
-    @GetMapping(value = "/like/{imageId}")
+    @GetMapping(value = "/likeImage/{imageId}")
     public ResponseEntity<Long> nombreDesLikes(@PathVariable int imageId){
 
         Long count = likeService.getNombreDesLikesByImageId(imageId);
@@ -26,7 +26,7 @@ public class LikeController {
         return ResponseEntity.ok(count);
 
     }
-    @GetMapping(value = "/like/{userId}")
+    @GetMapping(value = "/likeUser/{userId}")
     public ResponseEntity<Long> nombreDesLikesFaitParUser(@PathVariable int userId){
 
         Long count = likeService.getNombreDesLikesByUserId(userId);
