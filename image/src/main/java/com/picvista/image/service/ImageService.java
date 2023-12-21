@@ -75,4 +75,7 @@ public class ImageService {
             return "Failed to delete image: " + e.getMessage();
         }
     }
+    public Iterable<Image> getAllImages(){
+        return imageRepository.findAll();
+    }
 }
