@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/Comment/pom.xml" />
         <option value="$PROJECT_DIR$/like/pom.xml" />
         <option value="$PROJECT_DIR$/User/pom.xml" />
+        <option value="$PROJECT_DIR$/ClientUI/pom.xml" />
       </list>
     </option>
   </component>

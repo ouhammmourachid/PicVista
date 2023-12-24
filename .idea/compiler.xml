@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ClientUI" />
         <module name="image" />
         <module name="Comment" />
         <module name="User" />
@@ -16,9 +17,10 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ClientUI" options="-parameters" />
       <module name="Comment" options="-parameters" />
       <module name="User" options="-parameters" />
-      <module name="image" options="-parameters" />
+      <module name="image" options="" />
       <module name="like" options="-parameters" />
     </option>
   </component>
