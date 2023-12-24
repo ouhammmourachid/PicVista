@@ -24,7 +24,8 @@ public class ImageService {
     //private String uploadDirectory = "./uploads";
 
     public String saveImage(Long userId, MultipartFile image){
-        String uploadDirectory = "../images";
+
+        String uploadDirectory = "./images";
         String currentDirectory = System.getProperty("user.dir");
 
         // Print the current working directory
