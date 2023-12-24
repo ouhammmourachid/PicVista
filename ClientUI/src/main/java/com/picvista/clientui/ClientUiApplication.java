@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients("com.clientui")
+@EnableFeignClients("com.picvista")
 public class ClientUiApplication {
 
 	public static void main(String[] args) {

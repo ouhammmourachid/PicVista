@@ -20,7 +20,7 @@
       <module name="ClientUI" options="-parameters" />
       <module name="Comment" options="-parameters" />
       <module name="User" options="-parameters" />
-      <module name="image" options="" />
+      <module name="image" options="-parameters" />
       <module name="like" options="-parameters" />
     </option>
   </component>
