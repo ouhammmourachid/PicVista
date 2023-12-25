@@ -1,31 +1,17 @@
-# Use an official Maven image as a base image
-FROM maven:3.8.4-openjdk-11-slim AS builder
-
-# Set the working directory in the container
+FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
+ 
+COPY .mvn/ .mvn
+COPY mvnw pom.xml ./
 
-# Copy the Maven wrapper files
-COPY mvnw .
-COPY .mvn .mvn
+# Install dos2unix to convert the line endings to unix format
+RUN apk add --no-cache dos2unix
+# Make the mvnw script executable
+RUN dos2unix mvnw
 
-# Copy the project files
-COPY pom.xml .
-COPY src src
+RUN ./mvnw dependency:go-offline
+ 
+COPY src ./src
 
-# Build the project
-RUN ./mvnw clean package
-
-# Create a new image based on a smaller JRE image
-FROM openjdk:11-jre-slim
-
-# Set the working directory in the container
-WORKDIR /app
-
-# Copy the built JAR file from the builder stage
-COPY --from=builder /app/target/your-application.jar /app/app.jar
-
-# Expose the port that the application will run on
-EXPOSE 8080
-
-# Define the command to run your application
-CMD ["java", "-jar", "app.jar"]
+EXPOSE 5013
+CMD ./mvnw spring-boot:run

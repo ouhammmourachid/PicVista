@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.Optional;
 
-@FeignClient(name ="microservice-like",url = "localhost:5014")
+@FeignClient(name ="microservice-like",url = "like-service:5014")
 public interface MicroserviceLikeProxy {
     @GetMapping(value = "/likeImage/{imageId}")
     ResponseEntity<Long> nombreDesLikes(@PathVariable int imageId);

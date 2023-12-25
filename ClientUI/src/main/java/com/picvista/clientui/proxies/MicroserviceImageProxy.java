@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@FeignClient(name ="microservice-image",url = "localhost:5012")
+@FeignClient(name ="microservice-image",url = "image-service:5012")
 public interface MicroserviceImageProxy {
 
     @PostMapping("/image/upload")

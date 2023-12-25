@@ -1,0 +1,59 @@
+version: '3.9'
+
+services:
+
+  db:
+    image: picvista-db
+    ports:
+      - '3306:3306'
+    volumes:
+      - picvista-data:/var/lib/mysql
+
+  comment-service:
+    build: ./Comment
+    restart: unless-stopped
+    ports:
+      - '5013:5013'
+    depends_on:
+      - db
+  
+  clientui-service:
+    build: ./ClientUI
+    restart: unless-stopped
+    ports:
+      - '5015:5015'
+    depends_on:
+      - db
+  
+  image-service:
+    build: ./image
+    restart: unless-stopped
+    ports:
+      - '5012:5012'
+    depends_on:
+      - db
+    volumes:
+      - images:/usr/src/app/images
+  
+  like-service:
+    build: ./like
+    restart: unless-stopped
+    ports:
+      - '5014:5014'
+    depends_on:
+      - db
+  
+  user-service:
+    build: ./User
+    restart: unless-stopped
+    ports:
+      - '5011:5011'
+    depends_on:
+      - db
+
+volumes:
+  picvista-data:
+    driver: local
+  images:
+    driver: local
+

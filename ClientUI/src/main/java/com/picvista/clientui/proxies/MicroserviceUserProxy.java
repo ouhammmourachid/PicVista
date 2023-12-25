@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name ="microservice-user",url = "localhost:5011")
+@FeignClient(name ="microservice-user",url = "user-service:5011")
 public interface MicroserviceUserProxy {
     @GetMapping("/users")
     ResponseEntity<Iterable<UserBean>> getAllUsers();

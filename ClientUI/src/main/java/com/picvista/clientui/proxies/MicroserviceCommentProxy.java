@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@FeignClient(name ="microservice-comments",url = "localhost:5013")
+@FeignClient(name ="microservice-comments",url = "comment-service:5013")
 public interface MicroserviceCommentProxy {
     @GetMapping("/Comment/{id}")
     public Optional<CommentBean> getCommentById(@PathVariable("id") Long id);
