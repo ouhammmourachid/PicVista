@@ -9,6 +9,9 @@ RUN apk add --no-cache dos2unix
 # Make the mvnw script executable
 RUN dos2unix mvnw
 
+# make the mvnw script executable
+RUN chmod +x mvnw
+
 RUN ./mvnw dependency:go-offline
  
 COPY src ./src
