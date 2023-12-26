@@ -25,4 +25,12 @@ run-services:
 	kubectl create -f ./kube/image-service.yml
 	kubectl create -f ./kube/clientui-service.yml
 
+docker-build:
+	doocker compose build
+
+docker-up:
+	docker-compose up -d
+
+docker-down:
+	docker-compose down
 
