@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: like-service
+  labels:
+    name: like-service
+    app: picvista-app
+
+spec:
+  ports:
+    - port: 5014
+      targetPort: 5014
+  selector:
+    name: like-microservice
+    app: picvista-app
