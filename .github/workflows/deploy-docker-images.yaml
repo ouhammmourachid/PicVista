@@ -25,4 +25,4 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKER_USER }}/picvista-clientui:v0.0.${{ github.run_number}}
-            ${{ secrets.DOCKER_USER }}/pixel-alchemy:latest
+            ${{ secrets.DOCKER_USER }}/picvista-clientui:latest
