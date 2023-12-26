@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: clientui-pod
+  labels:
+    name: clientui-microservice
+    app: picvista-app
+
+spec:
+  containers:
+    - name: picvista-clientui
+      image: rachidouhammou/picvista-clientui
+      ports:
+        - containerPort: 5015
