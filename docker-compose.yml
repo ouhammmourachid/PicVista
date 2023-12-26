@@ -3,14 +3,14 @@ version: '3.9'
 services:
 
   db:
-    image: picvista-db
+    image: rachidouhammou/picvista-db
     ports:
       - '3306:3306'
     volumes:
       - picvista-data:/var/lib/mysql
 
   comment-service:
-    build: ./Comment
+    image: rachidouhammou/picvista-comment
     restart: unless-stopped
     ports:
       - '5013:5013'
@@ -18,7 +18,7 @@ services:
       - db
   
   clientui-service:
-    build: ./ClientUI
+    image: rachidouhammou/picvista-clientui
     restart: unless-stopped
     ports:
       - '5015:5015'
@@ -26,7 +26,7 @@ services:
       - db
   
   image-service:
-    build: ./image
+    image: rachidouhammou/picvista-image
     restart: unless-stopped
     ports:
       - '5012:5012'
@@ -36,7 +36,7 @@ services:
       - images:/usr/src/app/images
   
   like-service:
-    build: ./like
+    image: rachidouhammou/picvista-like
     restart: unless-stopped
     ports:
       - '5014:5014'
@@ -44,7 +44,7 @@ services:
       - db
   
   user-service:
-    build: ./User
+    image: rachidouhammou/picvista-user
     restart: unless-stopped
     ports:
       - '5011:5011'
