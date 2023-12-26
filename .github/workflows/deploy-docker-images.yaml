@@ -20,8 +20,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./ClientUI
-          file: ./Dockerfile
+          context: .
+          file: ./ClientUI/Dockerfile
           push: true
           tags: |
             ${{ secrets.DOCKER_USER }}/picvista-clientui:v0.0.${{ github.run_number}}
