@@ -1,11 +1,7 @@
-# Create Database
+# start the services using `docker compose`
 
-```
-cd Database
-docker build -t mysql_picvista_image .
-docker run --name picvista_database -p 3306:3306 -d mysql_picvista_image
-
-docker exec -it your_container_id sh
-mysql -proot_password
-CREATE DATABASE your_database_name
+```shell
+docker compose build --no-caches # build the images.
+docker compose up # run the images volumes and networks
+docker compose down # stop the images in the docker compose file
 ```
